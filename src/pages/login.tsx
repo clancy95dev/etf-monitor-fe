@@ -147,14 +147,14 @@ export const Login = () => {
         p: 2 
       }}
     >
-      {/* Portato maxWidth a "sm" per dare più larghezza su PC */}
+      
       <Container component="main" maxWidth="sm" disableGutters>
         <Paper 
           elevation={4} 
           sx={{ 
-            // px gestisce i lati (più largo su desktop)
+            
             px: { xs: 3, sm: 6, md: 8 }, 
-            // py gestisce l'altezza (più alto e arioso su desktop)
+          
             py: { xs: 4, sm: 6, md: 7 }, 
             width: '100%', 
             borderRadius: 5, 
@@ -221,7 +221,7 @@ export const Login = () => {
               helperText={emailError}
               disabled={loading}
               slotProps={{ input: { sx: { borderRadius: 2 } } }}
-              sx={{ mb: 3 }} // Spazio maggiore sotto l'input
+              sx={{ mb: 3 }} 
             />
             
             <TextField
@@ -250,7 +250,7 @@ export const Login = () => {
               variant="contained"
               color="primary"
               disabled={loading}
-              sx={{ mt: 4, mb: 2, p: 1.6, fontSize: '1.05rem', fontWeight: 'bold', borderRadius: 2.5 }} // Pulsante leggermente più grande e spesso
+              sx={{ mt: 4, mb: 2, p: 1.6, fontSize: '1.05rem', fontWeight: 'bold', borderRadius: 2.5 }}
               onClick={signIn}
             >
               {loading ? <CircularProgress size={24} color="inherit" /> : "Sign In"}

@@ -28,7 +28,6 @@ export const MuiNavbar = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [navAnchorEl, setNavAnchorEl] = useState<null | HTMLElement>(null);
 
-  // --- AUTOMAZIONE SU REFRESH PAGINA (F5) ---
   useEffect(() => {
     const restoreSession = async () => {
       const savedRefreshToken = localStorage.getItem("refreshToken");
@@ -123,7 +122,6 @@ export const MuiNavbar = () => {
     }
   };
 
-  // Variabile d'appoggio booleana per capire se l'utente è realmente autenticato con un token valido
   const isAuthenticated = userData != null && userData.jwtToken != null;
 
   return (
@@ -131,9 +129,8 @@ export const MuiNavbar = () => {
       <AppBar position="sticky" color="default" elevation={2} sx={{ bgcolor: 'background.paper' }}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
           
-          {/* --- PARTE SINISTRA: SCRITTA "ETF MONITOR" + HAMBURGER SOLO SE LOGGATO SU MOBILE --- */}
           <Stack direction="row" alignItems="center" spacing={1}>
-            {/* CORRETTO: l'hamburger appare solo se c'è il token */}
+            
             {isMobile && isAuthenticated && (
               <>
                 <IconButton
@@ -176,10 +173,9 @@ export const MuiNavbar = () => {
             </Typography>
           </Stack>
 
-          {/* --- PARTE DESTRA: WATCHLIST (DESKTOP) + UTENTE O LOGIN --- */}
           <Stack direction="row" spacing={2} alignItems="center">
             
-            {/* CORRETTO: Mostra il tasto Watchlist subito a sinistra del profilo solo se c'è il token */}
+            
             {!isMobile && isAuthenticated && (
               <Button 
                 onClick={() => navigate("/watchlist")} 
@@ -192,7 +188,7 @@ export const MuiNavbar = () => {
 
             {isCheckingAuth ? (
               <CircularProgress size={24} color="primary" />
-            ) : !isAuthenticated ? ( // CORRETTO QUI: Se non è autenticato (manca userData o manca il jwtToken) mostra SEMPRE il Login
+            ) : !isAuthenticated ? ( 
               <Button 
                 variant="contained" 
                 color='primary' 
@@ -202,7 +198,7 @@ export const MuiNavbar = () => {
                 Login
               </Button>
             ) : (
-              // Mostra il Profilo solo se ha superato il controllo ed è in possesso del jwtToken
+              
               <>
                 <IconButton
                   size="large"

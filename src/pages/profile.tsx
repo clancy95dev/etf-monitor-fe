@@ -18,7 +18,6 @@ import EditIcon from "@mui/icons-material/Edit";
 import CloseIcon from "@mui/icons-material/Close";
 import SaveIcon from "@mui/icons-material/Save";
 import LockResetIcon from "@mui/icons-material/LockReset";
-// Icone per i flag in modalità read-only
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import axios from "axios";
@@ -27,7 +26,6 @@ export const UserProfile = () => {
   const { userData, setUserData, isCheckingAuth } = useContext(AppContext);
   const navigate = useNavigate();
 
-  // Form states
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -37,7 +35,6 @@ export const UserProfile = () => {
   const [profileBackup, setProfileBackup] = useState<any>(null);
   const [isEditable, setIsEditable] = useState(false);
 
-  // UI States
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [globalError, setGlobalError] = useState("");
@@ -269,7 +266,7 @@ export const UserProfile = () => {
               startIcon={<LockResetIcon />}
               onClick={() => navigate("/change-password")}
               size="small"
-              sx={{ width: { xs: "100%", sm: "auto" } }} // <-- CORRETTO QUI
+              sx={{ width: { xs: "100%", sm: "auto" } }} 
             >
               Change Password
             </Button>
@@ -278,7 +275,7 @@ export const UserProfile = () => {
               startIcon={<EditIcon />}
               onClick={handleEnableEdit}
               size="small"
-              sx={{ width: { xs: "100%", sm: "auto" } }} // <-- CORRETTO QUI
+              sx={{ width: { xs: "100%", sm: "auto" } }} 
             >
               Edit Profile
             </Button>

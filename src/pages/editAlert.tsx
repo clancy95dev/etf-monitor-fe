@@ -204,7 +204,7 @@ export const EditAlert = () => {
   };
 
   const handleSaveAlert = async (alertData: any, isRetry = false, passedToken?: string) => {
-    setLoading(true); // Attiva lo stato di loading all'inizio del salvataggio
+    setLoading(true);
     let url = import.meta.env.VITE_API_URL + `/etf-portfolio/api/v1/watchlists/${id}/alerts`;
     if (alertData.id != null) {
       url += "/" + alertData.id;
@@ -259,14 +259,14 @@ export const EditAlert = () => {
           navigate("/login");
         }
       } else {
-        setLoading(false); // Disattiva il loading se non è un errore di token ma un fallimento generico
+        setLoading(false);
       }
     }
   };
 
   const handleDeleteAlerts = async (ids: number[], isRetry = false, passedToken?: string) => {
     if (ids.length === 0) return;
-    setLoading(true); // Forza il blocco visivo immediato al click su elimina
+    setLoading(true);
 
     let url = import.meta.env.VITE_API_URL + `/etf-portfolio/api/v1/watchlists/${id}/alerts?ids=${ids.join(",")}`;
 
@@ -304,7 +304,7 @@ export const EditAlert = () => {
           navigate("/login");
         }
       } else {
-        setLoading(false); // Disattiva il loading in caso di errore generico di cancellazione
+        setLoading(false);
       }
     }
   };
@@ -350,7 +350,7 @@ export const EditAlert = () => {
     return { padding: basePadding };
   };
 
-  // Sostituito: Mostra lo spinner intero a schermo solo ed esclusivamente al primissimo avvio del componente
+  
   if (isCheckingAuth || (loading && !watchlistInfo)) {
     return (
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "80vh" }}>
@@ -538,7 +538,7 @@ export const EditAlert = () => {
                 </TableRow>
               )}
 
-              {/* GENERAZIONE RIGHE REALI */}
+              
               {alertConditionList.map((row, index) => {
                 const isItemSelected = selectedAlertIds.indexOf(row.id) !== -1;
                 return (
@@ -592,7 +592,7 @@ export const EditAlert = () => {
                 );
               })}
 
-              {/* SCHERMATA VUOTA DI DEFAULT */}
+              
               {alertConditionList.length === 0 && !loading && (
                 <TableRow>
                   <TableCell colSpan={5} align="center" sx={{ py: 4 }}>
@@ -603,7 +603,7 @@ export const EditAlert = () => {
                 </TableRow>
               )}
 
-              {/* SPINNER SE ENTRASSIMO CON TABELLA TOTALMENTE VUOTA MA IN LOADING */}
+              
               {alertConditionList.length === 0 && loading && (
                 <TableRow>
                   <TableCell colSpan={5} align="center" sx={{ py: 6 }}>

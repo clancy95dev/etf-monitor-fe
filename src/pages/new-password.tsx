@@ -19,20 +19,17 @@ export const ChangePassword = () => {
   const { userData, setUserData, isCheckingAuth } = useContext(AppContext);
   const navigate = useNavigate();
 
-  // Form states
+ 
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  // UI and Error states
   const [saving, setSaving] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
   
-  // Specific state for password validation message
   const [passwordFormatError, setPasswordFormatError] = useState("");
 
-  // Password requirements regex
   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&]).{8,30}$/;
 
   const forceGlobalLogout = () => {
@@ -41,7 +38,6 @@ export const ChangePassword = () => {
     navigate("/login");
   };
 
-  // Protect route on mount
   useEffect(() => {
 
     const token = localStorage.getItem("refreshToken");
@@ -54,7 +50,6 @@ export const ChangePassword = () => {
 
   }, [isCheckingAuth, userData]);
 
-  // ON BLUR Validation
   const handlePasswordBlur = () => {
     if (!newPassword) {
       setPasswordFormatError(""); 
@@ -68,7 +63,6 @@ export const ChangePassword = () => {
     }
   };
 
-  // API Call
   const handleSubmit = async (e: React.FormEvent, isRetry = false, passedToken?: string) => {
 
   const tokenToUse = passedToken || userData?.jwtToken;

@@ -150,7 +150,7 @@ export const AlertDialog = (props: any) => {
       aria-labelledby='dialog-edit-alert' 
       aria-describedby='alert-edit-content'
       fullWidth
-      maxWidth="sm" // Aumentato leggermente a "sm" per dare miglior respiro ai campi su desktop, restando fluido su mobile
+      maxWidth="sm"
       PaperProps={{
         sx: {
           borderRadius: 3,
@@ -166,7 +166,6 @@ export const AlertDialog = (props: any) => {
       
       <DialogContent id='alert-edit-content'>
         <Box sx={{ pt: 2 }}>
-          {/* Stack verticale flessibile al posto della vecchia Grid */}
           <Stack spacing={2.5}>
             
             <FormControl fullWidth>
@@ -212,7 +211,6 @@ export const AlertDialog = (props: any) => {
               />
             </Box>
 
-            {/* --- SEZIONE PREZZO --- */}
             {(props.editingAlert.alertType === 'PRICE_ABOVE' || props.editingAlert.alertType === 'PRICE_UNDER') && (
               <TextField 
                 fullWidth 
@@ -226,7 +224,6 @@ export const AlertDialog = (props: any) => {
               />
             )}
             
-            {/* --- SEZIONE VOLUME --- */}
             {(props.editingAlert.alertType === 'VOLUME_ABOVE' || props.editingAlert.alertType === 'VOLUME_UNDER') && (
               <TextField 
                 fullWidth 
@@ -240,7 +237,6 @@ export const AlertDialog = (props: any) => {
               />
             )}
 
-            {/* --- SEZIONE RENDIMENTO (YIELD) --- */}
             {(props.editingAlert.alertType === 'YIELD_ABOVE' || props.editingAlert.alertType === 'YIELD_UNDER') && (
               <Stack spacing={2.5}>
                 <TextField 

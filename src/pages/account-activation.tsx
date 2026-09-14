@@ -163,7 +163,7 @@ export const Activation = () => {
         p: 2 
       }}
     >
-      {/* Portato a "sm" per allargare la sezione da PC */}
+      
       <Container component="main" maxWidth="sm" disableGutters>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
           
@@ -300,7 +300,7 @@ export const Activation = () => {
               </Paper>
             </>
           ) : (
-            /* Schermata di successo - Anch'essa allargata e responsive */
+            
             <Paper 
               elevation={4} 
               sx={{ 

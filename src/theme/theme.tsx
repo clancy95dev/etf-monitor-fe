@@ -1,29 +1,29 @@
-import { createTheme, alpha } from '@mui/material/styles'; // <-- AGGIUNTO alpha per gestire le trasparenze
+import { createTheme, alpha } from '@mui/material/styles'; 
 
 export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#1366ff',       // Classic Yahoo Finance blue for actions and buttons
+      main: '#1366ff', 
       light: '#4d8cff',
       dark: '#0046c7',
     },
     secondary: {
-      main: '#00b074',       // Green for positive yields and watchlist additions
+      main: '#00b074',       
     },
     error: {
-      main: '#ff334b',       // Red for negative yields or removals
-      light: '#ff667a',      // AGGIUNTO: Rosso più chiaro per testi su sfondi scuri
+      main: '#ff334b',     
+      light: '#ff667a',      
     },
     background: {
-      default: '#141820',    // Lighter grey/blue midnight background to reduce contrast with paper elements
-      paper: '#1d222c',      // Surface background (Navbar, Tables, Cards) providing soft depth
+      default: '#141820',   
+      paper: '#1d222c',      
     },
     text: {
-      primary: '#f5f7fa',    // Soft ice-white for great readability without eye strain
-      secondary: '#95a1bb',  // Muted blue-grey for secondary text and hints
+      primary: '#f5f7fa',    
+      secondary: '#95a1bb',  
     },
-    divider: '#303b4e',      // Clean borders and lines
+    divider: '#303b4e',      
   },
   typography: {
     fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
@@ -116,7 +116,7 @@ export const darkTheme = createTheme({
         },
       },
     },
-    // --- NUOVO: SOVRASCRITTURA GLOBALE DELLO STILE DEL COMPONENTE ALERT ---
+    
     MuiAlert: {
       styleOverrides: {
         // Intercettiamo la variante standard con severity='error'
@@ -129,7 +129,7 @@ export const darkTheme = createTheme({
             color: theme.palette.error.light,
           },
         }),
-        // Se usi la variante standard/outlined (default di MUI se non specifichi variant="filled")
+       
         standardError: ({ theme }) => ({
           backgroundColor: alpha(theme.palette.error.main, 0.15),
           color: theme.palette.error.light,

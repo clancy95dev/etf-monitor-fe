@@ -10,9 +10,9 @@ import {
   Alert, 
   CircularProgress,
   Container,
-  Grid // Ripristinato Grid standard
+  Grid 
 } from '@mui/material';
-import axios from 'axios'; // Corretto l'import da 'ajax' a 'axios'
+import axios from 'axios'; 
 import { useState, useContext ,useEffect} from "react";
 
 import { AppContext } from "../App"; 

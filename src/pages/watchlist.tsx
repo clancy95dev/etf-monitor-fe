@@ -260,7 +260,6 @@ export const Watchlist = () => {
   const isSelected = (watchlistId: number) =>
     selectedIds.indexOf(watchlistId) !== -1;
 
-  // Mirroring cell responsive styles from EtfPage
   const getResponsiveCellStyles = (columnId: string) => {
     const basePadding = { xs: "10px 8px", md: "16px 12px" };
 

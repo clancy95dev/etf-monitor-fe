@@ -133,7 +133,7 @@ export const EtfSearchDialog = ({
           sx: {
             borderRadius: 3,
             p: { xs: 1, sm: 2 },
-            overflowY: "auto" // Permette lo scorrimento solo se la finestra intera supera l'altezza dello schermo (es. su mobile vecchi)
+            overflowY: "auto" 
           }
         }}
       >
@@ -143,7 +143,6 @@ export const EtfSearchDialog = ({
           </Typography>
         </DialogTitle>
 
-        {/* Rimosso dividers per evitare il box con altezza fissa e scrollbar associata */}
         <DialogContent id="search-etf-content" sx={{ overflowY: "visible" }}>
           <Box sx={{ width: "100%", pt: 1 }}>
             <Stack spacing={2.5}>
@@ -340,7 +339,7 @@ export const EtfSearchDialog = ({
         </DialogContent>
         
         <DialogActions sx={{ p: 3, justifyContent: "space-between" }}>
-          {/* Bottone reimpostato su color="inherit" per renderlo neutro/bianco */}
+          
           <Button 
             onClick={handleClearFilters}
             color="inherit" 

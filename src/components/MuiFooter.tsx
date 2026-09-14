@@ -7,9 +7,9 @@ export const MuiFooter = () => {
       sx={{
         py: 3,
         px: 2,
-        mt: 'auto', // Spinge il footer in fondo se il contenuto della pagina è poco
+        mt: 'auto', 
         backgroundColor: 'background.paper',
-        borderTop: '1px solid #303b4e', // Linea chiara coordinata con la Navbar
+        borderTop: '1px solid #303b4e', 
         textAlign: 'center'
       }}
     >

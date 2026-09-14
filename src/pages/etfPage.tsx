@@ -18,7 +18,7 @@ import {
   IconButton,
   Tooltip
 } from "@mui/material";
-// Importazione icone Material UI aggiornate
+
 import SearchIcon from "@mui/icons-material/Search";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
@@ -434,7 +434,7 @@ export const EtfPage = () => {
           sx={{
             width: { xs: "100%", sm: "auto" },
             fontWeight: "bold",
-            px: 3 // Aumenta il padding orizzontale del bottone
+            px: 3 
           }}
         >
           SEARCH

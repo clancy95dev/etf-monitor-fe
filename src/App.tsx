@@ -1,5 +1,6 @@
 import { EtfPage } from "./pages/etfPage";
-import { BrowserRouter as Router, Route, Routes,Navigate } from "react-router-dom";
+//import { BrowserRouter as Router, Route, Routes,Navigate } from "react-router-dom";
+import { HashRouter as Router, Route, Routes,Navigate } from "react-router-dom";
 import { MuiNavbar } from "./components/MuiNavbar";
 import {EtfDetail} from "./pages/etf-detail";
 import {Registration} from "./pages/registration";
